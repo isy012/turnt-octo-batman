@@ -1,18 +1,14 @@
 $(document).ready(function() {
 if (!$.curCSS) $.curCSS = $.css; 
 var countries = [
-   "San Francisco",
-   "Los Angeles",
-   "Seattle",
-   "Las Vegas",
-   "Philadelphia",
-   "New York City",
-   "Washington D.C.",
-   "Chicago",
-   "Miami"
+   "Comcast",
+   "Verizon",
+   "AT&T",
+   "Time Warner Cable",
+   "NetZero"
 ];
 
-$('#q2').autocomplete({
+$('#q1').autocomplete({
     source: countries,
     messages: {
         noResults: '',

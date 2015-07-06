@@ -26,16 +26,20 @@
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<span><label for="q1">Describe yourself.</label></span>
+								<span><label for="q1">Who is your Internet Service Provider?</label></span>
 								<input id="q1" name="q1" type="text"/>
 							</li>
 							<li>
-								<span><label for="q2">Your Current City?</label></span>
-								<input id="q2" name="q2" type="text"/>
+								<span><label for="q2">How much do you pay for home Internet? (USD)</label></span>
+								<input id="q2" name="q2" type="number"/>
 							</li>
 							<li>
-								<span><label for="q3">What time do you sleep?</label></span>
-								 <input id="q3" name="q3" type="text"/>
+								<span><label for="q3">What is your download speed? (Mbps)</label></span>
+								<input id="q3" name="3" type="number"/>
+							</li>							
+							<li>
+								<span><label for="q4">Which city do you live in?</label></span>
+								 <input id="q4" name="q4" type="text"/>
 							</li>
 						</ol><!-- /questions -->
 						<button class="submit" type="submit">Send answers</button>
@@ -52,8 +56,9 @@
 					<span class="final-message"></span>
 				</form><!-- /simform -->			
 			</section>
+
 		</div><!-- /container -->
-		2015 | Izzy Park
+		2015 | <a href ="http://twitter.com/Izzy_Park" target="top">@izzy_park</a>
 		<script src="js/classie.js"></script>
 		<script src="js/stepsForm.js"></script>
 		<script>
@@ -74,15 +79,17 @@
 					var messageEl = theForm.querySelector( '.final-message' );
 					var br = document.createElement("br");
 
-					if (theForm.q2.value == "San Francisco"){
-						messageEl.innerHTML = 'I heart SF too.';
+					messageEl.innerHTML += 'Your ISP is ' + theForm.q1.value + ' and you pay <b>$20</b> more on average relative to homes in <br>' + theForm.q4.value + '</b>';
+					messageEl.appendChild(br)
+
+					if (theForm.q1.value == "Comcast"){
+						messageEl.appendChild(br)
+						messageEl.innerHTML += 'Call Comcast at 1 (800) 934-6489.';
 						messageEl.appendChild(br)
 					};
 
-					messageEl.innerHTML += 'Thank you! We\'ll be in touch.';
 					classie.addClass( messageEl, 'show' );
 
-					display_svg();
 				}
 			} );
 		</script>

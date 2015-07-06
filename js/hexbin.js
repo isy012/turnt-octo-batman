@@ -87,5 +87,5 @@ if (document.getElementsByTagName("svg").length>0) {
   svg.call(tip);
 }
 
-console.log("Else function activated");
+
 }
